@@ -1,0 +1,13 @@
+{
+  "name" : "viz-send-image-app",
+  "version" : "1.0.0",
+  "description" : "This is code to upload/insert images to the Cloudant DB coming from devices or applications",
+  "main" : "insert.js",
+  "scripts": {
+    "start": "node insert.js images/fire.jpg"
+  },
+  "dependencies" : {
+    "cloudant" : "*"
+  },
+  "devDependencies": {}
+}
