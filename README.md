@@ -1,6 +1,6 @@
 ![architecture-diagram](images-docs/architecture-diagram.png)
 # Upload and process an image into IBM Cloud to receive alerts
-Build an IoT project with IBM Functions (serverless), Node-RED, Node.js and along with IoT Platform.
+Build an IoT project with IBM Cloud Functions (serverless), Node-RED, Node.js and along with IoT Platform.
 
 ## Overview and Goal
 The goal of this tutorial is to take images from any other source, process it and trigger alerts to inform a change, a danger, etc. This project can be a quick setup and can be attached to an existing project to do the analysis of images and send alerts.
@@ -12,10 +12,12 @@ The workflow is not limited to the diagram shown above only but it can be expand
 Let's take a look on these parts:
 * Run any application to upload an image. In this example, I provided the **viz-send-image-app** folder.
 * Create a Cloudant database service
-* Create IBM Functions (**viz-openwhisk** folder)
-* Include Watson Visual Recognition code in IBM Functions
-* Create IoT Platform service where IBM Functions will process images and send them to the IoT Platform
+* Create IBM Cloud Functions (**viz-openwhisk** folder)
+* Include Watson Visual Recognition code in IBM Cloud Functions
+* Create IoT Platform service where IBM Cloud Functions will process images and send them to the IoT Platform
 * Create Node-RED nodes to send the any alert
+
+![alt text](images-docs/image-analysis-iot-alert.gif "run the whole setup")
 
 ## Prerequisites
 You will need the following accounts and tools:
@@ -33,7 +35,7 @@ In this tutorial, you will require to setup part of the applications on IBM Clou
 As the diagram above in the picture presents six steps. It will be best to start as the following:
 * **viz-send-image-app** folder can be executed locally or be pushed to the cloud if you want
 * Create a Node-RED package that includes Cloudant, IoT Platform and Visual Recognition services
-* Create IBM Functions from the Catalog
+* Create IBM Cloud Functions from the Catalog
 * Copy/Paste your credentials from Cloudant, IoT Platform, Visual Recognition into credentials.cfg (in **viz-openwhisk-functions**) and credentials.json (in **viz-send-image-app**)
 * Copy/Paste the json flow in your Node-RED editor
 * Make sure that ibmiot in Node-RED have the correct information of IoT Platform
@@ -73,7 +75,7 @@ $ windows.bat --install
 > If you decided to remove what you've installed, replace --install with --uninstall
 
 ## Step 4
-IBM Functions will grab the image inserted to Cloudant DB and analyze it by Watson Visual Recognition that we have pushed in step 3. Then it posts an event to the Watson IoT Platform for further processing.
+IBM Cloud Functions will grab the image inserted to Cloudant DB and analyze it by Watson Visual Recognition that we have pushed in step 3. Then it posts an event to the Watson IoT Platform for further processing.
 
 ![vr](images-docs/vr.PNG)
 * First upload will be registered as a device to the Watson IoT Platform.
