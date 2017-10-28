@@ -29,7 +29,9 @@ To verify you have nodejs installed run `node -v` at a command prompt/terminal.
 If you choose to use Git to download the code samples you must also have a [GitHub.com account](https://github.com). You can also download the code as a compressed file without a GitHub.com account.
 
 ## Deploy to Bluemix
-In this tutorial, you will require to setup part of the applications on IBM Cloud. Each folder represents an application, basically a setup on its own.
+In this tutorial, you will require to setup each folder as a separate applications on IBM Cloud. 
+
+There will manual setups from terminal, basically running command lines. The "Deploy to Bluemix" button for easy deployments is under work.
 
 ## Steps
 As the diagram above in the picture presents six steps. It will be best to start as the following:
@@ -43,16 +45,23 @@ As the diagram above in the picture presents six steps. It will be best to start
 > We will dive more into the details of each part in the next steps assuming that you have your Bluemix account set for use. We will not complicate building these applications, so we will be relying on the manual creation of these setups from Bluemix browser and minimizing the command lines. More command lines are used when setting up Openwhisk.
 
 ## Step 1
-We will actually replacing an image capturing device and use the app that is at **viz-send-image-app**. The app will upload the image into Cloudant database.
+We have a basic UI at **viz-send-image-app** to help us upload images into Cloudant database.
 
-![nodejs](images-docs/nodejs.PNG)
-* To run this code, execute the following command:
-  ```
-  $ cd viz-send-image-app
-  $ npm install
-  $ node insert.js images\fire.jpeg
+![nodejs](images-docs/ui.png)
+**To deploy this setup from a terminal, use the following commands:**
+```
+cf api api.ng.bluemix.net
+cf login -u YOUR_BLUEMIX_USERNAME
+cf push APP_NAME --no-start
+cf restage APP_NAME
+cf start APP_NAME
+```
+> To troubleshoot errors, use `cf logs YOUR_APP_NAME --recent` command (i.e. `cf logs viz-image --recent`).
 
-  ```
+* In a browser, access the app.  
+Open the following URL: `https://YOUR_APP_NAME.mybluemix.net`    
+Example: `https://viz-image.mybluemix.net/`.
+
 ## Step 2
 ![cloudant](images-docs/cloudant.PNG)
 
