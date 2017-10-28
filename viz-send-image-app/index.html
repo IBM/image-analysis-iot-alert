@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Upload/Insert Images</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var options = {
+                beforeSubmit: showRequest,
+                success: showResponse
+            };
+
+            $('#frmUploader').submit(function () {
+                $(this).ajaxSubmit(options);
+                return false;
+            });
+        });
+
+        // pre-submit callback
+        function showRequest(formData, jqForm, options) {
+            alert('Uploading is starting.');
+            return true;
+        }
+
+        // post-submit callback
+        function showResponse(responseText, statusText, xhr, $form) {
+            alert('status: ' + statusText + '\n\nresponseText: \n' + responseText );
+        }
+    </script>
+</head>
+<body>
+    <p><b>Upload images to server using less than 50 KB of size.</b></p><br>
+    <form id="frmUploader" enctype="multipart/form-data" action="api/Upload/" method="post">
+        <input type="file" name="imgUploader" multiple />
+        <input type="submit" name="submit" id="btnSubmit" value="Upload" />
+    </form>
+    <pre name="cb">
+</body>
+</html>
