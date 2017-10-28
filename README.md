@@ -17,7 +17,7 @@ Let's take a look on these parts:
 * Create IoT Platform service where IBM Cloud Functions will process images and send them to the IoT Platform
 * Create Node-RED nodes to send the any alert
 
-![alt text](images-docs/image-analysis-iot-alert.gif "run the whole setup")
+![alt text](images-docs/image-analysis-iot-alert-new.gif "run the whole setup")
 
 ## Prerequisites
 You will need the following accounts and tools:
