@@ -15,7 +15,7 @@ GOTO:CASE%1
 
 :CASE--install
 SETLOCAL
-FOR /f "delims=" %%x IN (credentials.cfg) DO ( ECHO %%x|findstr "=" > NUL &&(set %%x))
+FOR /f "delims=" %%x IN (credentials.env) DO ( ECHO %%x|findstr "=" > NUL &&(set %%x))
 
 ECHO Setting the OpenWhisk properties in a namespace
 bx wsk property set --apihost %API_HOST% --auth %OW_AUTH_KEY% --namespace "%BLUEMIX_ORG%_%BLUEMIX_SPACE%"
@@ -25,7 +25,6 @@ bx wsk package bind /whisk.system/cloudant simulate-iot-cloudant -p dbname %CLOU
 
 ECHO Binding IoT Gateway
 bx wsk package bind /watson-iot/iot-gateway wiotp-gateway -p org %ORGID%  -p gatewayTypeId %GATEWAYTYPEID% -p gatewayId %GATEWAYID% -p gatewayToken %GATEWAYTOKEN% -p eventType %EVENTTYPE%
-
 
 ECHO Creating actions
 bx wsk action create cloudant-mapper db-mapper.js
@@ -43,7 +42,7 @@ GOTO:endall
 
 :CASE--uninstall
 SETLOCAL
-FOR /f "delims=" %%x IN (credentials.cfg) DO ( ECHO %%x|findstr "=" > NUL &&(set %%x))
+FOR /f "delims=" %%x IN (credentials.env) DO ( ECHO %%x|findstr "=" > NUL &&(set %%x))
 
 ECHO Setting the OpenWhisk properties in a namespace
 bx wsk property set --apihost %API_HOST% --auth %OW_AUTH_KEY% --namespace "%BLUEMIX_ORG%_%BLUEMIX_SPACE%"

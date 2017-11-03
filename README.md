@@ -60,6 +60,9 @@ Create a database to store the incoming images. I used a db that I called it eve
 
 ## Step 3
 ![functions-ow](images-docs/functions-ow.PNG)
+> ** Add credentials to credentials.env.example and rename file to credentials.env**
+> ** Make sure you rename app and service names to your specific app and service names.**
+
 For Mac users:
 ```
 $ cd viz-send-image-app

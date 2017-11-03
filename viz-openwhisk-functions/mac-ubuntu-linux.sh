@@ -1,5 +1,5 @@
 #!/bin/bash
-source credentials.cfg
+source credentials.env
 
 function usage() {
   echo -e "Usage: $0 [--install,--uninstall,--clear,--help]"
