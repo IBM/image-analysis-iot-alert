@@ -4,6 +4,6 @@ applications:
   instances: 1
   domain: mybluemix.net
   name: viz-image
-  host: viz-image
+  random-route: true
   disk_quota: 512M
   
