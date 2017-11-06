@@ -18,10 +18,7 @@ Let's take a look on these parts:
 * Include Watson Visual Recognition code in IBM Cloud Functions
 * Create IoT Platform service where IBM Cloud Functions will process images and send them to the IoT Platform
 * Create Node-RED nodes to send the any alert
-
 ![alt text](images-docs/image-analysis-iot-alert-new.gif "run the whole setup")
-
-
 ## Prerequisites
 You will need the following accounts and tools:
 * [Bluemix account](https://console.ng.bluemix.net/registration/)
@@ -58,19 +55,20 @@ We have a basic UI at **viz-send-image-app** to help us upload images into Cloud
 
 **Update with your credentials in credentials.json and rename app name in manifest.yml**
 
-**To deploy this setup from a terminal, use the following commands:**
+**To deploy this setup from a terminal, use the following commands (make sure CLIs are downloaded for these commands):**
 ```
-bx cf api api.ng.bluemix.net
-bx cf login -u YOUR_BLUEMIX_USERNAME
-bx cf push APP_NAME --no-start
-bx cf restage APP_NAME
-bx cf start APP_NAME
+bx api api.ng.bluemix.net
+bx login -u <YOUR_BLUEMIX_USERNAME>
+bx target -o <ORG> -s <SPACE>
+bx push <APP_NAME> --no-start
+bx restage <APP_NAME>
+bx start <APP_NAME>
 ```
-> To troubleshoot errors, use `cf logs YOUR_APP_NAME --recent` command (i.e. `cf logs viz-image --recent`).
+> To troubleshoot errors, use `bx logs YOUR_APP_NAME --recent` command (i.e. `bx logs viz-image --recent`).
 
 * In a browser, access your app by:  
 Typing your app's URL: `https://YOUR_APP_NAME.mybluemix.net` (YOUR_APP_NAME = whatever you named your app)  
-> For example, my app's url is: `https://viz-image.mybluemix.net/`.
+> For example, my app's url is as the following: `https://viz-image.mybluemix.net/`.
 
 
 ## Step 2 - Cloudant database
@@ -81,12 +79,12 @@ Create a database to store the incoming images. Go to IBM Cloud's (Bluemix) Cata
 
 ## Step 3 - IBM Cloud Functions (previously OpenWhisk)
 ![functions-ow](images-docs/functions-ow.PNG)
-> Add your credentials to credentials.env.example and rename it to credentials.env
+> **Add your credentials to credentials.env.example and rename it to credentials.env**
 
-> **Make sure you rename app and service names to your specific app and service names in:
-  - credentials.env.example
-  - mac-ubuntu-linux.sh
-  - windows.bat**
+> **Make sure you rename app and service names to your specific app and service names in:**
+>  **- credentials.env.example**
+>  **- mac-ubuntu-linux.sh**
+>  **- windows.bat**
 
 For Mac users (mac-ubuntu-linux.sh is for Linux based OS):
 ```
@@ -120,7 +118,7 @@ You will need to create a [gateway](https://developer.ibm.com/recipes/tutorials/
 
 
 ## Step 6 - Node-RED
-Copy and paste the json flow from **viz-node-red/flow.json** into Import -> Clipboard at your Node-RED `https://YOUR_APP_NAME.mybluemix.net/red` (YOUR_APP_NAME = whatever you named your app).
+Copy and paste the json flow from **viz-node-red/flow.json** into Import -> Clipboard at your Node-RED `https://YOUR_APP_NAME.mybluemix.net/red` (YOUR_APP_NAME = whatever you named your app). Assuming that you already created Node-RED package from IBM Cloud's Catalog. If not, go ahead and create one. Ususally with Node-RED package, you'll get a Cloudant db. You can either use that or bind the one you created in Step 2. To avoid confusion, make sure you use one Cloudant service.
 ![node-red-flow](images-docs/node-red-flow.PNG)
 ![node-red-output](images-docs/node-red-output.PNG)
 
