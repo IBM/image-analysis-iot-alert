@@ -74,20 +74,17 @@ Typing your app's URL: `https://YOUR_APP_NAME.mybluemix.net` (YOUR_APP_NAME = wh
 ## Step 2 - Cloudant database
 ![cloudant](images-docs/cloudant.PNG)
 
-Create a database to store the incoming images. Go to IBM Cloud's (Bluemix) Catalog and look for Cloudant database. Create a service with a name or your choice. Then save its credentials for a later use. Launch Cloudant db and create a database and name it. I used created a db, for example, that I called it events.
+Create a database to store the incoming images. Go to IBM Cloud's (Bluemix) Catalog and look for Cloudant database. Create a service with a name or your choice. Then save its credentials for a later use. Launch Cloudant db and create a database and name it. I created a db, for example, that I called it "events".
 
 
 ## Step 3 - IBM Cloud Functions (previously OpenWhisk)
 ![functions-ow](images-docs/functions-ow.PNG)
 > **Add your credentials to credentials.env.example and rename it to credentials.env**
 
-> **Make sure you rename app and service names to your specific app and service names in:**
-
->  **- credentials.env.example**
-
->  **- mac-ubuntu-linux.sh**
-
->  **- windows.bat**
+**Make sure you rename your app + service names to your specific app + service names in the following files:**
+>  - **credentials.env.example**
+>  - **mac-ubuntu-linux.sh**
+>  - **windows.bat**
 
 For Mac users (mac-ubuntu-linux.sh is for Linux based OS):
 ```
@@ -157,8 +154,6 @@ This web application includes code to track deployments to [IBM Bluemix](https:/
 
 This data is collected from the `package.json` and `repository.yaml` file in the sample application and the `VCAP_APPLICATION` and `VCAP_SERVICES` environment variables in IBM Bluemix and other Cloud Foundry platforms. This data is used by IBM to track metrics around deployments of sample applications to IBM Bluemix to measure the usefulness of our examples, so that we can continuously improve the content we offer to you. Only deployments of sample applications that include code to ping the Deployment Tracker service will be tracked.
 
-## Disabling deployment tracking
-Deployment tracking can be disabled by removing the `require("metrics-tracker-client").track();` line from the './bin/www' file.
 
 ## License
 [Apache 2.0](LICENSE)
