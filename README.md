@@ -68,7 +68,7 @@ bx start <APP_NAME>
 
 * In a browser, access your app by:  
 Typing your app's URL: `https://YOUR_APP_NAME.mybluemix.net` (YOUR_APP_NAME = whatever you named your app)  
-> For example, my app's url is as the following: `https://viz-image.mybluemix.net/`.
+* For example, my app's url is as the following: `https://viz-image.mybluemix.net/`.
 
 
 ## Step 2 - Cloudant database
@@ -82,8 +82,11 @@ Create a database to store the incoming images. Go to IBM Cloud's (Bluemix) Cata
 > **Add your credentials to credentials.env.example and rename it to credentials.env**
 
 > **Make sure you rename app and service names to your specific app and service names in:**
+
 >  **- credentials.env.example**
+
 >  **- mac-ubuntu-linux.sh**
+
 >  **- windows.bat**
 
 For Mac users (mac-ubuntu-linux.sh is for Linux based OS):
