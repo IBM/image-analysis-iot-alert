@@ -86,6 +86,9 @@ Create a database to store the incoming images. Go to IBM Cloud's (Bluemix) Cata
 >  - **mac-ubuntu-linux.sh**
 >  - **windows.bat**
 
+
+> Make sure you are able to run scripts locally like *.sh or *.bat
+
 For Mac users (mac-ubuntu-linux.sh is for Linux based OS):
 ```
 $ cd viz-send-image-app
@@ -100,7 +103,6 @@ $ windows.bat --install
 ```
 > If you decided to remove what you've installed, replace --install with --uninstall and run the command.
 
-> Make sure you are able to run files locally like *.sh or *.bat
 
 
 ## Step 4 - Visual Recognition
