@@ -11,13 +11,14 @@ This tutorial will use an app to insert images into Cloudant, process it and dis
 
 The workflow is not limited to the diagram shown above only but it can be expanded. We will be showcasing how to do it and you can take on this project, expand it, change it or make a real use of it.
 
-Let's take a look on these parts:
-* Run any application to upload an image. In this example, I provided the **viz-send-image-app** folder.
-* Create a Cloudant database service
-* Create IBM Cloud Functions (**viz-openwhisk** folder)
-* Include Watson Visual Recognition code in IBM Cloud Functions
-* Create IoT Platform service where IBM Cloud Functions will process images and send them to the IoT Platform
-* Create Node-RED nodes to send the any alert
+**Let's take a look on these parts:**
+> * Run any application to upload an image. In this example, I provided the **viz-send-image-app** folder (STEP 1)
+> * Create a Cloudant database service (STEP 2)
+> * Create IBM Cloud Functions (**viz-openwhisk** folder) (STEP 3)
+> * Include Watson Visual Recognition code in IBM Cloud Functions (STEP 4)
+> * Create IoT Platform service where IBM Cloud Functions will process images and send them to the IoT Platform (STEP 5)
+> * Create Node-RED nodes to send the any alert (STEP 6)
+
 ![alt text](images-docs/image-analysis-iot-alert-new.gif "run the whole setup")
 ## Prerequisites
 You will need the following accounts and tools:
@@ -35,18 +36,20 @@ In this tutorial, you will require to setup each folder as a separate applicatio
 There will manual setups from the terminal, basically running command lines. The "Deploy to Bluemix" button for easy deployments is under WIP.
 
 
-## Steps
-As the diagram above in the picture presents six steps. Make sure you start from here with the followings:
-* **viz-send-image-app** folder can be executed locally or be pushed to the cloud if you want
-* Create a Node-RED package that includes Cloudant, IoT Platform and Visual Recognition services
-* Create IBM Cloud Functions from the Catalog
-* Copy/Paste your credentials from Cloudant, IoT Platform, Visual Recognition into credentials.env.example (in **viz-openwhisk-functions**) and credentials.json (in **viz-send-image-app**)
-* Copy/Paste the json flow in your Node-RED editor
-* Make sure that ibmiot in Node-RED have the correct information of IoT Platform
+## Steps - IMPORTANT - Read slow
+### As the diagram above in the picture presents six steps. Make sure you start from here with the followings:
+* **viz-send-image-app** folder can be executed locally or be pushed to the cloud if you want **__(STEP 1)__**
+* Create a Node-RED package that includes Cloudant, IoT Platform and Visual Recognition services **__(STEP 2)__**
+* Create IBM Cloud Functions from the Catalog **__(STEP 3)__**
+* Copy/Paste your credentials from Cloudant, IoT Platform, Visual Recognition into credentials.env.example (in **viz-openwhisk-functions**) and credentials.json (in **viz-send-image-app**) **__(STEP 4)__**
+* Copy/Paste the json flow in your Node-RED editor **__(STEP 5)__**
+* Make sure that ibmiot in Node-RED have the correct information of IoT Platform **__(STEP 6)__**
 
 > We will dive more into the details of each part in the next steps assuming that you have your Bluemix account set for use. We will not complicate building these applications, so we will be relying on the manual creation of these setups from Bluemix browser and minimizing the command lines. More command lines are used when setting up Openwhisk.
 
-**__IMPORTANT__: Make sure before you start with the steps, you update the files to match your credentials and rename your apps names.**
+
+**__IMPORTANT__: Make sure before you start with the steps, update the files to match your credentials and rename with your app names.**
+
 
 ## Step 1 - App UI
 We have a basic UI at **viz-send-image-app** to help us upload images into Cloudant database.
