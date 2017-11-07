@@ -91,7 +91,9 @@ Create a database to store the incoming images. Go to IBM Cloud's (Bluemix) Cata
 ![functions-ow](images-docs/functions-ow.PNG)
 
 __IMPORTANT__: 
+
 *** **Add your credentials to credentials.env.example and rename it to credentials.env** ***
+
 *** **Make sure you rename your app + service names to your specific app + service names in the following files:** ***
 >  - **credentials.env.example**
 >  - **mac-ubuntu-linux.sh**
