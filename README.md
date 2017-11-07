@@ -24,6 +24,7 @@ The workflow is not limited to the diagram shown above only but it can be expand
 You will need the following accounts and tools:
 * [Bluemix account](https://console.ng.bluemix.net/registration/)
 * [Bluemix CLI](https://console.bluemix.net/docs/cli/reference/bluemix_cli/index.html#getting-started)
+* [Openwhisk CLI](https://github.com/apache/incubator-openwhisk-cli/releases)
 * [nodejs](https://nodejs.org/en/download/)
 To verify you have nodejs installed run `node -v` at a command prompt/terminal.
 * Optional: [Git](https://git-scm.com/downloads)
