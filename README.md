@@ -33,7 +33,7 @@ If you choose to use Git to download the code samples you must also have a [GitH
 ## Deploy to Bluemix
 In this tutorial, you will require to setup each folder as a separate applications on IBM Cloud. 
 
-There will manual setups from the terminal, basically running command lines. The "Deploy to Bluemix" button for easy deployments is under WIP.
+> There will be manual setups from the terminal, running command lines. Because credentials are needed in files.
 
 
 ## Steps - IMPORTANT - Read slow
@@ -56,9 +56,9 @@ We have a basic UI at **viz-send-image-app** to help us upload images into Cloud
 
 ![nodejs](images-docs/ui.png)
 
-**Update with your credentials in credentials.json and rename app name in manifest.yml**
+*** **Put your credentials in credentials.json and rename app name in manifest.yml** ***
 
-* **To deploy this setup from a terminal, use the following commands (make sure CLIs are downloaded for these commands):**
+**To deploy this setup from a terminal, use the following commands (make sure CLIs are downloaded for these commands):**
 ```
 cd viz-send-image-app
 bx api api.ng.bluemix.net
@@ -68,10 +68,9 @@ bx app push <APP_NAME>
 ```
 > To troubleshoot errors, use `bx logs YOUR_APP_NAME --recent` command (i.e. `bx logs viz-image --recent`).
 
- * In a browser, access your app by typing your app's URL: `https://YOUR_APP_NAME.mybluemix.net` (YOUR_APP_NAME = whatever you named your app)  
- * For example, my app's url is as the following: `https://viz-image.mybluemix.net/`.
+ * In a browser, access your app by typing your app's URL: `https://YOUR_APP_NAME.mybluemix.net` (YOUR_APP_NAME = whatever you named your app). For example, my app's url is as the following: `https://viz-image.mybluemix.net/`.
 
-* **To it run locally:**
+**To it run locally:**
 ```
 cd viz-send-image-app
 npm install 
@@ -88,7 +87,9 @@ Create a database to store the incoming images. Go to IBM Cloud's (Bluemix) Cata
 
 ## Step 3 - IBM Cloud Functions (previously OpenWhisk)
 > **Create IBM Cloud Functions from the Catalog before you start step 3.**
+
 ![functions-ow](images-docs/functions-ow.PNG)
+
 > **Add your credentials to credentials.env.example and rename it to credentials.env**
 
 **Make sure you rename your app + service names to your specific app + service names in the following files:**
@@ -97,7 +98,7 @@ Create a database to store the incoming images. Go to IBM Cloud's (Bluemix) Cata
 >  - **windows.bat**
 
 
-> Make sure you are able to run scripts locally like *.sh or *.bat
+> **Make sure you are able to run scripts locally like *.sh or *.bat**
 
 For Mac users (mac-ubuntu-linux.sh is for Linux based OS):
 ```
@@ -116,7 +117,7 @@ $ windows.bat --install
 
 
 ## Step 4 - Visual Recognition
-No action is required from the users side. To explain it, actually, IBM Cloud Functions will grab the image inserted to Cloudant DB and analyze it by Watson Visual Recognition that we have pushed in step 3. Then it posts an event to the Watson IoT Platform for further processing.
+__No action is required from the developer__. To explain it, actually, IBM Cloud Functions will grab the image inserted to Cloudant DB and analyze it by Watson Visual Recognition that we have pushed in step 3. Then it posts an event to the Watson IoT Platform for further processing.
 
 ![vr](images-docs/vr.PNG)
 * First upload will be registered as a device to the Watson IoT Platform.
