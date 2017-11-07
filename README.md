@@ -36,11 +36,11 @@ There will manual setups from the terminal, basically running command lines. The
 
 
 ## Steps
-As the diagram above in the picture presents six steps. It will be best to start as the following:
+As the diagram above in the picture presents six steps. Make sure you start from here with the followings:
 * **viz-send-image-app** folder can be executed locally or be pushed to the cloud if you want
 * Create a Node-RED package that includes Cloudant, IoT Platform and Visual Recognition services
 * Create IBM Cloud Functions from the Catalog
-* Copy/Paste your credentials from Cloudant, IoT Platform, Visual Recognition into credentials.cfg (in **viz-openwhisk-functions**) and credentials.json (in **viz-send-image-app**)
+* Copy/Paste your credentials from Cloudant, IoT Platform, Visual Recognition into credentials.env.example (in **viz-openwhisk-functions**) and credentials.json (in **viz-send-image-app**)
 * Copy/Paste the json flow in your Node-RED editor
 * Make sure that ibmiot in Node-RED have the correct information of IoT Platform
 
@@ -84,6 +84,7 @@ Create a database to store the incoming images. Go to IBM Cloud's (Bluemix) Cata
 
 
 ## Step 3 - IBM Cloud Functions (previously OpenWhisk)
+> **Create IBM Cloud Functions from the Catalog before you start step 3.**
 ![functions-ow](images-docs/functions-ow.PNG)
 > **Add your credentials to credentials.env.example and rename it to credentials.env**
 
