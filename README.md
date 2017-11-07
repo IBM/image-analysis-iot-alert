@@ -61,9 +61,7 @@ cd viz-send-image-app
 bx api api.ng.bluemix.net
 bx login -u <YOUR_BLUEMIX_USERNAME>
 bx target -o <ORG> -s <SPACE>
-bx app push <APP_NAME> --no-start
-bx app restage <APP_NAME>
-bx app start <APP_NAME>
+bx app push <APP_NAME> 
 ```
 > To troubleshoot errors, use `bx logs YOUR_APP_NAME --recent` command (i.e. `bx logs viz-image --recent`).
 
