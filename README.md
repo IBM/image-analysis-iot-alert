@@ -36,14 +36,18 @@ In this tutorial, you will require to setup each folder as a separate applicatio
 > There will be manual setups from the terminal, running command lines. Because credentials are needed in files.
 
 
-## Steps - IMPORTANT - Read slow
+## Steps - IMPORTANT - Read Slow
 
-### As the diagram above in the picture presents six steps. Create all the bullet points mentioned and save their credentials on a spreadshhet. Make sure you start from here with the followings: 
+### As the diagram above in the picture presents six steps. Create all the bullet points mentioned and save their credentials on a spreadsheet. Make sure you start from here with the followings: 
 
 * Create a Watson IoT Platform service instance from the Bluemix Catalog 
+
 * Create a [gateway](https://developer.ibm.com/recipes/tutorials/how-to-register-gateways-in-ibm-watson-iot-platform/) and a [device](https://developer.ibm.com/recipes/tutorials/how-to-register-devices-in-ibm-iot-foundation/) manually in the IoT platform. They will be auto-registered when data will flow later on from IBM Functions the first time.
+
 * Create a Node-RED package (it already includes Cloudant database)
+
 * Create Visual Recognition service instance 
+
 * Create IBM Cloud Functions from the Catalog 
 
 
