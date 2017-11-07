@@ -55,7 +55,7 @@ We have a basic UI at **viz-send-image-app** to help us upload images into Cloud
 
 **Update with your credentials in credentials.json and rename app name in manifest.yml**
 
-**To deploy this setup from a terminal, use the following commands (make sure CLIs are downloaded for these commands):**
+* **To deploy this setup from a terminal, use the following commands (make sure CLIs are downloaded for these commands):**
 ```
 cd viz-send-image-app
 bx api api.ng.bluemix.net
@@ -65,16 +65,16 @@ bx app push <APP_NAME>
 ```
 > To troubleshoot errors, use `bx logs YOUR_APP_NAME --recent` command (i.e. `bx logs viz-image --recent`).
 
-**To run locally:**
+ * In a browser, access your app by typing your app's URL: `https://YOUR_APP_NAME.mybluemix.net` (YOUR_APP_NAME = whatever you named your app)  
+ * For example, my app's url is as the following: `https://viz-image.mybluemix.net/`.
+
+* **To it run locally:**
 ```
 cd viz-send-image-app
 npm install 
 npm start
 ```
-
-* In a browser, access your app by:  
-Typing your app's URL: `https://YOUR_APP_NAME.mybluemix.net` (YOUR_APP_NAME = whatever you named your app)  
-* For example, my app's url is as the following: `https://viz-image.mybluemix.net/`.
+ * In a browser, access your app by typing: `localhost:3000`
 
 
 ## Step 2 - Cloudant database
