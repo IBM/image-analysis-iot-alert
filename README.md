@@ -103,6 +103,10 @@ npm start
 ## Step 3 - IBM Cloud Functions (previously OpenWhisk)
 > **Make sure you already created IBM Cloud Functions from the Catalog before you start Step 3.**
 
+* To get the OW_AUTH_KEY, run the following command in your terminal: `bx wsk property get --auth`
+
+* For CURRENT_NAMESPACE and PACKAGE_NAME, plug your namespace to them (same OPEN_WHISK_NAMESPACE)
+
 ![functions-ow](images-docs/functions-ow.PNG)
 
 __IMPORTANT__ : 
