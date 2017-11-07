@@ -65,6 +65,13 @@ bx app push <APP_NAME>
 ```
 > To troubleshoot errors, use `bx logs YOUR_APP_NAME --recent` command (i.e. `bx logs viz-image --recent`).
 
+**To run locally:**
+```
+cd viz-send-image-app
+npm install 
+npm start
+```
+
 * In a browser, access your app by:  
 Typing your app's URL: `https://YOUR_APP_NAME.mybluemix.net` (YOUR_APP_NAME = whatever you named your app)  
 * For example, my app's url is as the following: `https://viz-image.mybluemix.net/`.
