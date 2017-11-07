@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "This is code to upload/insert images to the Cloudant DB",
   "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
