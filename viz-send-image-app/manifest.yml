@@ -4,6 +4,7 @@ applications:
   instances: 1
   domain: mybluemix.net
   name: viz-image
+  command: node server.js
   random-route: true
   disk_quota: 512M
   
