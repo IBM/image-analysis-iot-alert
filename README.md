@@ -47,7 +47,7 @@ In this tutorial, you will require to setup each folder as a separate applicatio
 * Create IBM Cloud Functions from the Catalog 
 
 
-> Save the credentials for a later use
+> Save all the credentials from above for a later use
 
 > We will dive more into the details of each part in the next steps assuming that you have your Bluemix account set for use. We will not complicate building these applications, so we will be relying on the manual creation of these setups from Bluemix browser and minimizing the command lines. More command lines are used when setting up Openwhisk.
 
@@ -137,13 +137,13 @@ __No action is required from the developer__. To explain it, actually, IBM Cloud
 
 ## Step 5 - Watson IoT Platform
 - Make sure that by now you have already created IBM Cloud Functions instance
-- Make sure also that you created a gateway and a device (in Step 1)
+- Make sure also that you created a gateway and a device 
 ![iot-device-gateway](images-docs/iot-device-gateway.PNG)
 ![vr-device-props](images-docs/vr-device-props.PNG)
 
 
 ## Step 6 - Node-RED
-- Make sure you already created a Node-RED package
+- Make sure you already created a Node-RED package from the Catalog
 
 - Copy and paste the json flow from **viz-node-red/flow.json** into Import -> Clipboard at your Node-RED `https://YOUR_APP_NAME.mybluemix.net/red` (YOUR_APP_NAME = whatever you named your app). Assuming that you already created Node-RED package from IBM Cloud's Catalog. If not, go ahead and create one. Ususally with Node-RED package, you'll get a Cloudant db. You can either use that or bind the one you created in Step 2. To avoid confusion, make sure you use one Cloudant service.
 
