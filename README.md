@@ -5,11 +5,11 @@ Build an IoT project with IBM Cloud Functions (serverless), Node-RED, Node.js an
 
 
 ## Overview and Goal
-The goal of this tutorial is to take images from any other source, process it and trigger alerts to inform a change, a danger, etc. This project can be a quick setup and can be attached to an existing project to do the analysis of images and send alerts.
+The goal of this tutorial is to take images from any other source, process it and trigger alerts to inform a change, a danger, etc. This project can be a quick setup or can be attached to an existing project to do the analysis of images and send alerts.
 
-This tutorial will use an app to insert images into Cloudant, process it and display an alert. It will be divided into parts followed by steps in each part to help you build an application based on visual recognition. The folders in this repo are seperate entities of applications that will need a separate setup.
+This tutorial will use an app to insert images into Cloudant, process it and display an alert. It is divided into multiple parts followed by a set of steps in each part to help you build an application based on visual recognition. The folders in this repo are seperate entities of applications that will need a separate setup.
 
-The workflow is not limited to the diagram shown above only but it can be expanded. We will be showcasing how to do it and you can take on this project and expand it, change it or make a real use of it.
+The workflow is not limited to the diagram shown above only but it can be expanded. We will be showcasing how to do it and you can take on this project, expand it, change it or make a real use of it.
 
 Let's take a look on these parts:
 * Run any application to upload an image. In this example, I provided the **viz-send-image-app** folder.
@@ -32,7 +32,7 @@ If you choose to use Git to download the code samples you must also have a [GitH
 ## Deploy to Bluemix
 In this tutorial, you will require to setup each folder as a separate applications on IBM Cloud. 
 
-There will manual setups from terminal, basically running command lines. The "Deploy to Bluemix" button for easy deployments is under work.
+There will manual setups from the terminal, basically running command lines. The "Deploy to Bluemix" button for easy deployments is under WIP.
 
 
 ## Steps
