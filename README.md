@@ -146,6 +146,7 @@ Copy and paste the json flow from **viz-node-red/flow.json** into Import -> Clip
 * [IBM Watson IoT Platform](http://www.ibm.com/internet-of-things/iot-solutions/watson-iot-platform/)   
 * [IBM Watson IoT Platform Developers Community](https://developer.ibm.com/iotplatform/)
 * [Simulate IoT Device](https://github.com/IBM/manage-control-device-node-red)
+* [Node-RED](https://nodered.org/)
 
 
 ## Privacy notice
