@@ -57,12 +57,13 @@ We have a basic UI at **viz-send-image-app** to help us upload images into Cloud
 
 **To deploy this setup from a terminal, use the following commands (make sure CLIs are downloaded for these commands):**
 ```
+cd viz-send-image-app
 bx api api.ng.bluemix.net
 bx login -u <YOUR_BLUEMIX_USERNAME>
 bx target -o <ORG> -s <SPACE>
-bx push <APP_NAME> --no-start
-bx restage <APP_NAME>
-bx start <APP_NAME>
+bx app push <APP_NAME> --no-start
+bx app restage <APP_NAME>
+bx app start <APP_NAME>
 ```
 > To troubleshoot errors, use `bx logs YOUR_APP_NAME --recent` command (i.e. `bx logs viz-image --recent`).
 
