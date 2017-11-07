@@ -123,13 +123,13 @@ __IMPORTANT__ :
 
 For Mac users (mac-ubuntu-linux.sh is for Linux based OS):
 ```
-$ cd viz-send-image-app
+$ cd viz-openwhisk-functions
 $ ./mac-ubuntu-linux.sh --install
 
 ```
 For windows users:
 ```
-$ cd viz-send-image-app
+$ cd viz-openwhisk-functions
 $ windows.bat --install
 
 ```
