@@ -90,15 +90,15 @@ Create a database to store the incoming images. Go to IBM Cloud's (Bluemix) Cata
 
 ![functions-ow](images-docs/functions-ow.PNG)
 
-> **Add your credentials to credentials.env.example and rename it to credentials.env**
-
-**Make sure you rename your app + service names to your specific app + service names in the following files:**
+__IMPORTANT__: 
+*** **Add your credentials to credentials.env.example and rename it to credentials.env** ***
+*** **Make sure you rename your app + service names to your specific app + service names in the following files:** ***
 >  - **credentials.env.example**
 >  - **mac-ubuntu-linux.sh**
 >  - **windows.bat**
 
+> Make sure you are able to run scripts locally like *.sh or *.bat
 
-> **Make sure you are able to run scripts locally like *.sh or *.bat**
 
 For Mac users (mac-ubuntu-linux.sh is for Linux based OS):
 ```
@@ -113,7 +113,6 @@ $ windows.bat --install
 
 ```
 > If you decided to remove what you've installed, replace --install with --uninstall and run the command.
-
 
 
 ## Step 4 - Visual Recognition
