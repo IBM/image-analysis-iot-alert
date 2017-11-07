@@ -11,7 +11,7 @@ This tutorial will use an app to insert images into Cloudant, process it and dis
 
 The workflow is not limited to the diagram shown above only but it can be expanded. We will be showcasing how to do it and you can take on this project, expand it, change it or make a real use of it.
 
-**Let's take a look on these parts:**
+**Let's take an overall look on these parts:**
 > * Run any application to upload an image. In this example, I provided the **viz-send-image-app** folder (STEP 1)
 > * Create a Cloudant database service (STEP 2)
 > * Create IBM Cloud Functions (**viz-openwhisk** folder) (STEP 3)
@@ -37,26 +37,36 @@ In this tutorial, you will require to setup each folder as a separate applicatio
 
 
 ## Steps - IMPORTANT - Read slow
-### As the diagram above in the picture presents six steps. Make sure you start from here with the followings:
-* **viz-send-image-app** folder can be executed locally or be pushed to the cloud if you want **__(STEP 1)__**
-* Create a Node-RED package that includes Cloudant, IoT Platform and Visual Recognition services **__(STEP 2)__**
-* Create IBM Cloud Functions from the Catalog **__(STEP 3)__**
-* Copy/Paste your credentials from Cloudant, IoT Platform, Visual Recognition into credentials.env.example (in **viz-openwhisk-functions**) and credentials.json (in **viz-send-image-app**) **__(STEP 4)__**
-* Copy/Paste the json flow in your Node-RED editor **__(STEP 5)__**
-* Make sure that ibmiot in Node-RED have the correct information of IoT Platform **__(STEP 6)__**
+
+### As the diagram above in the picture presents six steps. Create all the bullet points mentioned and save their credentials on a spreadshhet. Make sure you start from here with the followings: 
+
+* Create a Watson IoT Platform service instance from the Bluemix Catalog 
+* Create a [gateway](https://developer.ibm.com/recipes/tutorials/how-to-register-gateways-in-ibm-watson-iot-platform/) and a [device](https://developer.ibm.com/recipes/tutorials/how-to-register-devices-in-ibm-iot-foundation/) manually in the IoT platform. They will be auto-registered when data will flow later on from IBM Functions the first time.
+* Create a Node-RED package (it already includes Cloudant database)
+* Create Visual Recognition service instance 
+* Create IBM Cloud Functions from the Catalog 
+
+
+> Save the credentials for a later use
 
 > We will dive more into the details of each part in the next steps assuming that you have your Bluemix account set for use. We will not complicate building these applications, so we will be relying on the manual creation of these setups from Bluemix browser and minimizing the command lines. More command lines are used when setting up Openwhisk.
 
 
-**__IMPORTANT__: Make sure before you start with the steps, update the files to match your credentials and rename with your app names.**
+**__IMPORTANT__: Make sure before you start with the steps, update the files to match your credentials and rename app name with yours.**
 
 
 ## Step 1 - App UI
 We have a basic UI at **viz-send-image-app** to help us upload images into Cloudant database.
 
+- Make sure you already created a Watson IoT Platform service and saved the credentials
+
+- Make sure you already created a gateway and a device in IoT Platform. The gateway info will be used in Step 3 and the device info for credentials.json in this step.
+
+- Make sure you already created a Node-RED package that comes with Cloudant database and had saved the credentials of Cloudant
+
 ![nodejs](images-docs/ui.png)
 
-*** **Put your credentials in credentials.json and rename app name in manifest.yml** ***
+*** **Put needed credentials in credentials.json and rename app name in manifest.yml** ***
 
 **To deploy this setup from a terminal, use the following commands (make sure CLIs are downloaded for these commands):**
 ```
@@ -82,11 +92,11 @@ npm start
 ## Step 2 - Cloudant database
 ![cloudant](images-docs/cloudant.PNG)
 
-Create a database to store the incoming images. Go to IBM Cloud's (Bluemix) Catalog and look for Cloudant database. Create a service with a name or your choice. Then save its credentials for a later use. Launch Cloudant db and create a database and name it. I created a db, for example, that I called it "events".
+- Make sure you already created a Node-RED package that comes with Cloudant database and had saved the credentials of Cloudant. Create a database (a table) in Cloudant and name it, this will store the incoming images. 
 
 
 ## Step 3 - IBM Cloud Functions (previously OpenWhisk)
-> **Create IBM Cloud Functions from the Catalog before you start step 3.**
+> **Make sure you already created IBM Cloud Functions from the Catalog before you start Step 3.**
 
 ![functions-ow](images-docs/functions-ow.PNG)
 
@@ -122,17 +132,22 @@ __No action is required from the developer__. To explain it, actually, IBM Cloud
 
 ![vr](images-docs/vr.PNG)
 * First upload will be registered as a device to the Watson IoT Platform.
-* Go the Watson IoT Platform and check for the processed image data as an event stored in the Cloudant DB.
+* Go the Watson IoT Platform and check for the processed image data as an event stored in the Cloudant DB when the setup of the project is done and you run the application.
 
 
 ## Step 5 - Watson IoT Platform
-You will need to create a [gateway](https://developer.ibm.com/recipes/tutorials/how-to-register-gateways-in-ibm-watson-iot-platform/) and a [device](https://developer.ibm.com/recipes/tutorials/how-to-register-devices-in-ibm-iot-foundation/) manually in the IoT platform. They will be auto-registered when data will flow from IBM Functions the first time.
+- Make sure that by now you have already created IBM Cloud Functions instance
+- Make sure also that you created a gateway and a device (in Step 1)
 ![iot-device-gateway](images-docs/iot-device-gateway.PNG)
 ![vr-device-props](images-docs/vr-device-props.PNG)
 
 
 ## Step 6 - Node-RED
-Copy and paste the json flow from **viz-node-red/flow.json** into Import -> Clipboard at your Node-RED `https://YOUR_APP_NAME.mybluemix.net/red` (YOUR_APP_NAME = whatever you named your app). Assuming that you already created Node-RED package from IBM Cloud's Catalog. If not, go ahead and create one. Ususally with Node-RED package, you'll get a Cloudant db. You can either use that or bind the one you created in Step 2. To avoid confusion, make sure you use one Cloudant service.
+- Make sure you already created a Node-RED package
+
+- Copy and paste the json flow from **viz-node-red/flow.json** into Import -> Clipboard at your Node-RED `https://YOUR_APP_NAME.mybluemix.net/red` (YOUR_APP_NAME = whatever you named your app). Assuming that you already created Node-RED package from IBM Cloud's Catalog. If not, go ahead and create one. Ususally with Node-RED package, you'll get a Cloudant db. You can either use that or bind the one you created in Step 2. To avoid confusion, make sure you use one Cloudant service.
+
+- Make sure that ibmiot in Node-RED have the correct information of your IoT Platform 
 ![node-red-flow](images-docs/node-red-flow.PNG)
 ![node-red-output](images-docs/node-red-output.PNG)
 
