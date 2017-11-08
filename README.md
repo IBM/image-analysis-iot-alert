@@ -156,7 +156,7 @@ __No action is required from the developer__. To explain it, actually, IBM Cloud
 
 - Copy and paste the json flow from **viz-node-red/flow.json** into Import -> Clipboard at your Node-RED `https://YOUR_APP_NAME.mybluemix.net/red` (YOUR_APP_NAME = whatever you named your app). Assuming that you already created Node-RED package from IBM Cloud's Catalog. If not, go ahead and create one. Ususally with Node-RED package, you'll get a Cloudant db. You can either use that or bind the one you created in Step 2. To avoid confusion, make sure you use one Cloudant service.
 
-- Make sure that ibmiot in Node-RED have the correct information of your IoT Platform 
+- Make sure that ibmiot in Node-RED have the correct information of your IoT Platform and make sure you create an API_KEY and API_TOKEN from the platform itself, click on Members -> Generate Key button. 
 ![node-red-flow](images-docs/node-red-flow.PNG)
 ![node-red-output](images-docs/node-red-output.PNG)
 
