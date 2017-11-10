@@ -1,7 +1,7 @@
 ﻿## Maintainers Guide
 
 This guide is intended for maintainers — anybody with commit access to one or
-more Developer IBM Patten repositories.
+more Developer IBM Pattern repositories.
 
 ## Methodology:
 
