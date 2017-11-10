@@ -22,7 +22,7 @@ The workflow is not limited to the diagram shown above only but it can be expand
 ![alt text](images-docs/image-analysis-iot-alert-new.gif "run the whole setup")
 ## Prerequisites
 You will need the following accounts and tools:
-* [Bluemix account](https://console.ng.bluemix.net/registration/)
+* [IBM Cloud account](https://console.ng.bluemix.net/registration/)
 * [Bluemix CLI](https://console.bluemix.net/docs/cli/reference/bluemix_cli/index.html#getting-started)
 * [Openwhisk CLI](https://github.com/apache/incubator-openwhisk-cli/releases)
 * [nodejs](https://nodejs.org/en/download/)
@@ -31,7 +31,7 @@ To verify you have nodejs installed run `node -v` at a command prompt/terminal.
 If you choose to use Git to download the code samples you must also have a [GitHub.com account](https://github.com). You can also download the code as a compressed file without a GitHub.com account.
 
 
-## Deploy to Bluemix
+## Deploy to IBM Cloud
 In this tutorial, you will require to setup each folder as a separate applications on IBM Cloud. 
 
 > There will be manual setups from the terminal, running command lines. Because credentials are needed in files.
@@ -41,7 +41,7 @@ In this tutorial, you will require to setup each folder as a separate applicatio
 
 ### As the diagram above in the picture presents six steps. Create all the bullet points mentioned and save their credentials on a spreadsheet. Make sure you start from here with the followings: 
 
-* Create a Watson IoT Platform service instance from the Bluemix Catalog 
+* Create a Watson IoT Platform service instance from the IBM Cloud Catalog 
 
 * Create a [gateway](https://developer.ibm.com/recipes/tutorials/how-to-register-gateways-in-ibm-watson-iot-platform/) and a [device](https://developer.ibm.com/recipes/tutorials/how-to-register-devices-in-ibm-iot-foundation/) manually in the IoT platform. They will be auto-registered when data will flow later on from IBM Functions the first time.
 
@@ -54,7 +54,7 @@ In this tutorial, you will require to setup each folder as a separate applicatio
 
 > Save all the credentials from above for a later use
 
-> We will dive more into the details of each part in the next steps assuming that you have your Bluemix account set for use. We will not complicate building these applications, so we will be relying on the manual creation of these setups from Bluemix browser and minimizing the command lines. More command lines are used when setting up Openwhisk.
+> We will dive more into the details of each part in the next steps assuming that you have your IBM Cloud account set for use. We will not complicate building these applications, so we will be relying on the manual creation of these setups from IBM Cloud browser and minimizing the command lines. More command lines are used when setting up Openwhisk.
 
 
 **__IMPORTANT__: Make sure before you start with the steps, update the files to match your credentials and rename app name with yours.**
@@ -193,6 +193,8 @@ This web application includes code to track deployments to [IBM Bluemix](https:/
 
 This data is collected from the `package.json` and `repository.yaml` file in the sample application and the `VCAP_APPLICATION` and `VCAP_SERVICES` environment variables in IBM Bluemix and other Cloud Foundry platforms. This data is used by IBM to track metrics around deployments of sample applications to IBM Bluemix to measure the usefulness of our examples, so that we can continuously improve the content we offer to you. Only deployments of sample applications that include code to ping the Deployment Tracker service will be tracked.
 
+## Disabling deployment tracking
+Deployment tracking can be disabled by removing the `require("metrics-tracker-client").track();` line from the 'index.js' file.
 
 ## License
 [Apache 2.0](LICENSE)
