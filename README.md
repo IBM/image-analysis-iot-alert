@@ -20,6 +20,8 @@ The workflow is not limited to the diagram shown above only but it can be expand
 > * Create Node-RED nodes to send the any alert (STEP 6)
 
 ![alt text](images-docs/image-analysis-iot-alert-new.gif "run the whole setup")
+Click here to view the [IBM Pattern](https://developer.ibm.com/code/patterns/develop-an-iot-app-with-node-red-and-watson/) for this project.
+
 ## Prerequisites
 You will need the following accounts and tools:
 * [IBM Cloud account](https://console.ng.bluemix.net/registration/)
