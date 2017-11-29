@@ -107,6 +107,8 @@ npm start
 
 * To get the OW_AUTH_KEY, run the following command in your terminal: `bx wsk property get --auth`
 
+* [Create an API key and token in Watson IoT Platform for the gateway](https://developer.ibm.com/code/howtos/#!/howto/iot-generate-apikey-apitoken)
+
 * For CURRENT_NAMESPACE and PACKAGE_NAME, plug your namespace to them (same OPEN_WHISK_NAMESPACE)
 
 ![functions-ow](images-docs/functions-ow.PNG)
