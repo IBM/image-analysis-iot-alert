@@ -11,7 +11,8 @@
     "express": "^4.14.0",
     "multer": "^1.2.0",
     "cloudant": "latest",
-    "path": "latest"
+    "path": "latest",
+    "metrics-tracker-client": "*"
   },
   "author": {
     "name": "hovig ohannessian"

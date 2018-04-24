@@ -1,3 +1,4 @@
+require("metrics-tracker-client").track();
 ﻿var Express = require('express');
 var multer = require('multer');
 var bodyParser = require('body-parser');
@@ -18,7 +19,7 @@ var Storage = multer.diskStorage({
     }
 });
 
-var upload = multer({ storage: Storage }).array("imgUploader", 3); 
+var upload = multer({ storage: Storage }).array("imgUploader", 3);
 
 var cloudant = Cloudant({
   account : configFile.cloudantConfig.user,

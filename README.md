@@ -1,4 +1,7 @@
-![architecture-diagram](images-docs/architecture-diagram.png)
+**__Skill Level__**: Any Skill Level
+<br>**__N.B__**: All services used in this repo are Lite plans.
+
+![architecture-diagram](images-docs/iot-alert-arch.png)
 
 # Upload and process an image into IBM Cloud to receive alerts
 Build an IoT project with IBM Cloud Functions (serverless), Node-RED, Node.js and along with IoT Platform.
@@ -34,24 +37,24 @@ If you choose to use Git to download the code samples you must also have a [GitH
 
 
 ## Deploy to IBM Cloud
-In this tutorial, you will require to setup each folder as a separate applications on IBM Cloud. 
+In this tutorial, you will require to setup each folder as a separate applications on IBM Cloud.
 
 > There will be manual setups from the terminal, running command lines. Because credentials are needed in files.
 
 
 ## Steps - IMPORTANT - Read Slow
 
-### As the diagram above in the picture presents six steps. Create all the bullet points mentioned and save their credentials on a spreadsheet. Make sure you start from here with the followings: 
+### As the diagram above in the picture presents six steps. Create all the bullet points mentioned and save their credentials on a spreadsheet. Make sure you start from here with the followings:
 
-* Create a Watson IoT Platform service instance from the IBM Cloud Catalog 
+* Create a Watson IoT Platform service instance from the IBM Cloud Catalog
 
 * Create a [gateway](https://developer.ibm.com/recipes/tutorials/how-to-register-gateways-in-ibm-watson-iot-platform/) and a [device](https://developer.ibm.com/recipes/tutorials/how-to-register-devices-in-ibm-iot-foundation/) manually in the IoT platform. They will be auto-registered when data will flow later on from IBM Functions the first time.
 
 * Create a Node-RED package (it already includes Cloudant database)
 
-* Create Visual Recognition service instance 
+* Create Visual Recognition service instance
 
-* Create IBM Cloud Functions from the Catalog 
+* Create IBM Cloud Functions from the Catalog
 
 
 > Save all the credentials from above for a later use
@@ -79,18 +82,17 @@ We have a basic UI at **viz-send-image-app** to help us upload images into Cloud
 ```
 cd viz-send-image-app
 bx api api.ng.bluemix.net
-bx login -u <YOUR_BLUEMIX_USERNAME>
-bx target -o <ORG> -s <SPACE>
-bx app push <APP_NAME> 
+bx login -u YOUR_IBM_CLOUD_USERNAME -o org_name -s space_name
+bx app push <APP_NAME>
 ```
-> To troubleshoot errors, use `bx logs YOUR_APP_NAME --recent` command (i.e. `bx logs viz-image --recent`).
+> To troubleshoot errors, use `bx app logs YOUR_APP_NAME --recent` command (i.e. `bx app logs viz-image --recent`).
 
  * In a browser, access your app by typing your app's URL: `https://YOUR_APP_NAME.mybluemix.net` (YOUR_APP_NAME = whatever you named your app). For example, my app's url is as the following: `https://viz-image.mybluemix.net/`.
 
 **To it run locally:**
 ```
 cd viz-send-image-app
-npm install 
+npm install
 npm start
 ```
  * In a browser, access your app by typing: `localhost:3000`
@@ -99,7 +101,7 @@ npm start
 ## Step 2 - Cloudant database
 ![cloudant](images-docs/cloudant.PNG)
 
-- Make sure you already created a Node-RED package that comes with Cloudant database and had saved the credentials of Cloudant. Create a database (a table) in Cloudant and name it, this will store the incoming images. 
+- Make sure you already created a Node-RED package that comes with Cloudant database and had saved the credentials of Cloudant. Create a database (a table) in Cloudant and name it, this will store the incoming images.
 
 
 ## Step 3 - IBM Cloud Functions (previously OpenWhisk)
@@ -113,11 +115,11 @@ npm start
 
 ![functions-ow](images-docs/functions-ow.PNG)
 
-__IMPORTANT__ : 
+__IMPORTANT__ :
 
-*  **Add your credentials to credentials.env.example and rename it to credentials.env** 
+*  **Add your credentials to credentials.env.example and rename it to credentials.env**
 
-* **Make sure you rename your app + service names to your specific app + service names in the following files:** 
+* **Make sure you rename your app + service names to your specific app + service names in the following files:**
   - **credentials.env.example**
   - **mac-ubuntu-linux.sh**
   - **windows.bat**
@@ -150,7 +152,7 @@ __No action is required from the developer__. To explain it, actually, IBM Cloud
 
 ## Step 5 - Watson IoT Platform
 - Make sure that by now you have already created IBM Cloud Functions instance
-- Make sure also that you created a gateway and a device 
+- Make sure also that you created a gateway and a device
 ![iot-device-gateway](images-docs/iot-device-gateway.PNG)
 ![vr-device-props](images-docs/vr-device-props.PNG)
 
@@ -160,25 +162,36 @@ __No action is required from the developer__. To explain it, actually, IBM Cloud
 
 - Copy and paste the json flow from **viz-node-red/flow.json** into Import -> Clipboard at your Node-RED `https://YOUR_APP_NAME.mybluemix.net/red` (YOUR_APP_NAME = whatever you named your app). Assuming that you already created Node-RED package from IBM Cloud's Catalog. If not, go ahead and create one. Ususally with Node-RED package, you'll get a Cloudant db. You can either use that or bind the one you created in Step 2. To avoid confusion, make sure you use one Cloudant service.
 
-- Make sure that ibmiot in Node-RED have the correct information of your IoT Platform and make sure you create an API_KEY and API_TOKEN from the platform itself, click on Members -> Generate Key button. 
+- Make sure that ibmiot in Node-RED have the correct information of your IoT Platform and make sure you create an API_KEY and API_TOKEN from the platform itself, click on Members -> Generate Key button.
 ![node-red-flow](images-docs/node-red-flow.PNG)
 ![node-red-output](images-docs/node-red-output.PNG)
 
 
 ## Useful links
 
-* [IBM Bluemix](https://bluemix.net/)  
-* [IBM Bluemix Documentation](https://www.ng.bluemix.net/docs/)  
-* [IBM Bluemix Developers Community](http://developer.ibm.com/bluemix)  
+* [IBM Cloud](https://bluemix.net/)  
+* [IBM Cloud Documentation](https://www.ng.bluemix.net/docs/)  
+* [IBM Cloud Developers Community](http://developer.ibm.com/bluemix)  
 * [IBM Watson Internet of Things](http://www.ibm.com/internet-of-things/)  
 * [IBM Watson IoT Platform](http://www.ibm.com/internet-of-things/iot-solutions/watson-iot-platform/)   
 * [IBM Watson IoT Platform Developers Community](https://developer.ibm.com/iotplatform/)
 * [Simulate IoT Device](https://github.com/IBM/manage-control-device-node-red)
 * [Node-RED](https://nodered.org/)
 
+## <h2>Learn more</h2>
+<ul>
+<li><strong>Artificial Intelligence Code Patterns</strong>: Enjoyed this Code Pattern? Check out our other <a href="https://developer.ibm.com/code/technologies/artificial-intelligence/" rel="nofollow">AI Code Patterns</a>.</li>
+<li><strong>Data Analytics Code Patterns</strong>: Enjoyed this Code Pattern? Check out our other <a href="https://developer.ibm.com/code/technologies/data-science/" rel="nofollow">Data Analytics Code Patterns</a></li>
+<li><strong>AI and Data Code Pattern Playlist</strong>: Bookmark our <a href="https://www.youtube.com/playlist?list=PLzUbsvIyrNfknNewObx5N7uGZ5FKH0Fde" rel="nofollow">playlist</a> with all of our Code Pattern videos</li>
+<li><strong>With Watson</strong>: Want to take your Watson app to the next level? Looking to utilize Watson Brand assets? <a href="https://www.ibm.com/watson/with-watson/" rel="nofollow">Join the With Watson program</a> to leverage exclusive brand, marketing, and tech resources to amplify and accelerate your Watson embedded commercial solution.</li>
+<li><strong>Watson Studios</strong>: Master the art of data science with IBM's <a href="https://datascience.ibm.com/" rel="nofollow">Watson Studios</a></li>
+<li><strong>PowerAI</strong>: Get started or get scaling, faster, with a software distribution for machine learning running on the Enterprise Platform for AI: <a href="https://www.ibm.com/ms-en/marketplace/deep-learning-platform" rel="nofollow">IBM Power Systems</a></li>
+<li><strong>Spark on IBM Cloud</strong>: Need a Spark cluster? Create up to 30 Spark executors on IBM Cloud with our <a href="https://console.bluemix.net/catalog/services/apache-spark" rel="nofollow">Spark service</a></li>
+<li><strong>Kubernetes on IBM Cloud</strong>: Deliver your apps with the combined the power of <a href="https://www.ibm.com/cloud-computing/bluemix/containers" rel="nofollow">Kubernetes and Docker on IBM Cloud</a></li>
+</ul>
 
 ## Privacy notice
-This web application includes code to track deployments to [IBM Bluemix](https://www.bluemix.net/) and other Cloud Foundry platforms. The following information is sent to a [Deployment Tracker](https://github.com/IBM/metrics-collector-service) service on each deployment:
+This web application includes code to track deployments to [IBM Cloud](https://www.bluemix.net/) and other Cloud Foundry platforms. The following information is sent to a [Deployment Tracker](https://github.com/IBM/metrics-collector-service) service on each deployment:
 
 * Node.js package version
 * Node.js repository URL
@@ -195,10 +208,10 @@ This web application includes code to track deployments to [IBM Bluemix](https:/
 * Number of instances for each bound service and associated plan information
 * Metadata in the repository.yaml file
 
-This data is collected from the `package.json` and `repository.yaml` file in the sample application and the `VCAP_APPLICATION` and `VCAP_SERVICES` environment variables in IBM Bluemix and other Cloud Foundry platforms. This data is used by IBM to track metrics around deployments of sample applications to IBM Bluemix to measure the usefulness of our examples, so that we can continuously improve the content we offer to you. Only deployments of sample applications that include code to ping the Deployment Tracker service will be tracked.
+This data is collected from the `package.json` and `repository.yaml` file in the sample application and the `VCAP_APPLICATION` and `VCAP_SERVICES` environment variables in IBM Cloud and other Cloud Foundry platforms. This data is used by IBM to track metrics around deployments of sample applications to IBM Cloud to measure the usefulness of our examples, so that we can continuously improve the content we offer to you. Only deployments of sample applications that include code to ping the Deployment Tracker service will be tracked.
 
 ## Disabling deployment tracking
-Deployment tracking can be disabled by removing the `require("metrics-tracker-client").track();` line from the 'index.js' file.
+Deployment tracking can be disabled by removing the `require("metrics-tracker-client").track();` line from the 'server.js' file.
 
 ## License
 [Apache 2.0](LICENSE)
