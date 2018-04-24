@@ -3,7 +3,7 @@
 
 ![architecture-diagram](images-docs/iot-alert-arch.png)
 
-# Upload and process an image into IBM Cloud to receive alerts
+# [Upload and process an image into IBM Cloud to receive alerts](https://developer.ibm.com/code/patterns/analyze-an-image-and-send-a-status-alert/)
 Build an IoT project with IBM Cloud Functions (serverless), Node-RED, Node.js and along with IoT Platform.
 
 
