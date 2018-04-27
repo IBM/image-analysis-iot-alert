@@ -12,7 +12,6 @@
     "multer": "^1.2.0",
     "cloudant": "latest",
     "path": "latest",
-    "metrics-tracker-client": "*"
   },
   "author": {
     "name": "hovig ohannessian"

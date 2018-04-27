@@ -1,5 +1,4 @@
-require("metrics-tracker-client").track();
-﻿var Express = require('express');
+var Express = require('express');
 var multer = require('multer');
 var bodyParser = require('body-parser');
 var fs = require('fs');
