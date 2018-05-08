@@ -10,7 +10,7 @@ Build an IoT project with IBM Cloud Functions (serverless), Node-RED, Node.js an
 ## Overview and Goal
 The goal of this tutorial is to take images from any other source, process it and trigger alerts to inform a change, a danger, etc. This project can be a quick setup or can be attached to an existing project to do the analysis of images and send alerts.
 
-This tutorial will use an app to insert images into Cloudant, process it and display an alert. It is divided into multiple parts followed by a set of steps in each part to help you build an application based on visual recognition. The folders in this repo are seperate entities of applications that will need a separate setup.
+This tutorial will use an app to insert images into Cloudant, process it and display an alert. It is divided into multiple parts followed by a set of steps in each part to help you build an application based on visual recognition. The folders in this repo are separate entities of applications that will need a separate setup.
 
 The workflow is not limited to the diagram shown above only but it can be expanded. We will be showcasing how to do it and you can take on this project, expand it, change it or make a real use of it.
 
@@ -107,11 +107,11 @@ npm start
 ## Step 3 - IBM Cloud Functions (previously OpenWhisk)
 > **Make sure you already created IBM Cloud Functions from the Catalog before you start Step 3.**
 
-* To get the OW_AUTH_KEY, run the following command in your terminal: `bx wsk property get --auth`
+* To get the `OW_AUTH_KEY`, run the following command in your terminal: `bx wsk property get --auth`
 
 * [Create an API key and token in Watson IoT Platform for the gateway](https://developer.ibm.com/code/howtos/#!/howto/iot-generate-apikey-apitoken)
 
-* For CURRENT_NAMESPACE and PACKAGE_NAME, plug your namespace to them (same OPEN_WHISK_NAMESPACE)
+* For `CURRENT_NAMESPACE` and `PACKAGE_NAME`, plug your namespace to them (same OPEN_WHISK_NAMESPACE)
 
 ![functions-ow](images-docs/functions-ow.PNG)
 
@@ -127,7 +127,7 @@ __IMPORTANT__ :
 > Make sure you are able to run scripts locally like *.sh or *.bat
 
 
-For Mac users (mac-ubuntu-linux.sh is for Linux based OS):
+For Mac users (`mac-ubuntu-linux.sh` is for Linux based OS):
 ```
 $ cd viz-openwhisk-functions
 $ ./mac-ubuntu-linux.sh --install
@@ -162,7 +162,7 @@ __No action is required from the developer__. To explain it, actually, IBM Cloud
 
 - Copy and paste the json flow from **viz-node-red/flow.json** into Import -> Clipboard at your Node-RED `https://YOUR_APP_NAME.mybluemix.net/red` (YOUR_APP_NAME = whatever you named your app). Assuming that you already created Node-RED package from IBM Cloud's Catalog. If not, go ahead and create one. Ususally with Node-RED package, you'll get a Cloudant db. You can either use that or bind the one you created in Step 2. To avoid confusion, make sure you use one Cloudant service.
 
-- Make sure that ibmiot in Node-RED have the correct information of your IoT Platform and make sure you create an API_KEY and API_TOKEN from the platform itself, click on Members -> Generate Key button.
+- Make sure that ibmiot in Node-RED have the correct information of your IoT Platform and make sure you create an `API_KEY` and `API_TOKEN` from the platform itself, click on `Members` -> `Generate Key` button.
 ![node-red-flow](images-docs/node-red-flow.PNG)
 ![node-red-output](images-docs/node-red-output.PNG)
 
